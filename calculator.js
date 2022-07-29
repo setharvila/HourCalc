@@ -9,8 +9,8 @@ function initAll(){
 
 function calcHours(){
 
-    var hourIn = document.getElementById('hourIn').value;
-    var minIn = document.getElementById('minIn').value;
+    var hourIn = parseInt(document.getElementById('hourIn').value);
+    var minIn = parseInt(document.getElementById('minIn').value);
     var amPm;
     if(document.getElementById('am').checked) {
         console.log("Time is AM");
@@ -33,14 +33,17 @@ function calcHours(){
     returnString = ("You need " + Math.trunc(hoursNeeded) + " hours and " + Math.trunc(minNeeded) + " min.<br>");
     var neededTime =  Math.trunc(hoursNeeded) + " hours and " + Math.trunc(minNeeded) + " min.";
 
+    console.log("HourIn:" + hourIn + "  HourNeeded: " + hoursNeeded );
+
     var outHour = hourIn + hoursNeeded;
     var outMin = minIn + minNeeded;
+    console.log("outHour = " + outHour);
     console.log("outMin = " + outMin);
 
     if(outMin > 59){
         var remainMin = (outMin - 60);
         console.log("made it hereeeeeee");
-        outHour - 1;
+        outHour  = outHour + 1;
         outMin = remainMin;
     }
 
