@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <head>
     <script src="calculator.js"></script>
-    
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/yml7ssc.css">
+
 </head>
 <body>
-   <h3>Hour Calculation Tool</h3>
-   <p>This tool is designed to help you calculate what time you need to clock out to acheive a set number of hours for a week.</p>
-   <p>This tool should be used only to calculate the last day of the week (ie. when you need less than 24 hours to meet your goal).</p>
-   <p>This project is in its infancy and may cause errors. Use at your own risk! </p>
+  
+  <h3>Hour Calculation Tool</h3>
+  <p>This tool is designed to help you calculate what time you need to clock out to acheive a set number of hours for a week. <br>
+    This tool should be used only to calculate the last day of the week (ie. when you need less than 24 hours to meet your goal).<br>
+    This project is in its infancy and may cause errors. Use at your own risk! </p>
 
-        <label for="hoursDesired">Hours Desired:</label>
-        <input type="text" id="hoursDesired" name="hoursDesired" value = 40><br>
+  <div id="form">
+      <label for="hoursDesired">Hours Desired:</label>
+      <input type="text" id="hoursDesired" name="hoursDesired" value = 40><br>
 
-        <label for="hoursWorked">Hours Worked Already (base 10 decimal):</label>
-        <input type="text" id="hoursWorked" name="hoursWorked" value = 32.00><br>
+      <label for="hoursWorked">Hours Worked Already (base 10 decimal):</label>
+      <input type="text" id="hoursWorked" name="hoursWorked" value = 32.00><br>
 
-        <label for="hourIn">Time in: (HR:MM)</label>
-        <input type="number" id="hourIn" name="hourIn" value = 8>
-        <label>:</label>
-        <input type="number" id="minIn" name="minIn" value = 00>
-        <label for="html">AM</label>
-        <input type="radio" id="am" name="amPM" value="am" checked>
-        <label for="html">  PM</label>
-        <input type="radio" id="pm" name="amPM" value="pm"><br>
+      <label for="hourIn">Time in: (HR:MM)</label>
+      <input type="number" id="hourIn" name="hourIn" value = 8>
+      <label>:</label>
+      <input type="number" id="minIn" name="minIn" value = 00>
+      <label for="html">AM</label>
+      <input type="radio" id="am" name="amPM" value="am" checked>
+      <label for="html">  PM</label>
+      <input type="radio" id="pm" name="amPM" value="pm"><br>
 
-        <input type="button" value="Submit" id="submitBtn" onclick="calcHours()">
-      
-
-      <p id="result">Results here</p>
+      <input type="button" value="Submit" id="submitBtn" onclick="calcHours()">
+    </div>
+    <div id="result">
       <p>You need:</p>
-      <h2 id="needHours"></h2>
-      <p>Should clock out at:</p>
-      <h2 id="clockOutTime"></h2>
+      <p id="needHours"></p>
+      <p>You should clock out no later then:</p>
+      <p id="clockOutTime"></p>
+    </div>
 
-      <br><br><br>
-      <p>&copy;2022 - Seth Arvila</p>
+    <br><br><br>
+    <p>&copy;2022 - Seth Arvila<br>Version 1.2</p>
+    
 </body>

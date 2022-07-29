@@ -67,10 +67,11 @@ function calcHours(){
     var clockOutTime = txtHour + ":" + txtMin + amPm;
 
     console.log(returnString);
-    document.getElementById("result").innerHTML = returnString;
+    //document.getElementById("result").innerHTML = returnString;
 
     document.getElementById("clockOutTime").innerHTML = clockOutTime;
     document.getElementById("needHours").innerHTML = neededTime;
+    document.getElementById("result").style.visibility = "visible";
 
 
 }
