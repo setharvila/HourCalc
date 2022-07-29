@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <script src="calculator.js"></script>
+</head>
+<body>
+   
+
+        <label for="hoursDesired">Hours Desired:</label>
+        <input type="text" id="hoursDesired" name="hoursDesired" value = 40><br>
+
+        <label for="hoursWorked">Hours Worked Already (base 10 decimal):</label>
+        <input type="text" id="hoursWorked" name="hoursWorked" value = 32.00><br>
+
+        <label for="hourIn">Time in: (HR:MM)</label>
+        <input type="number" id="hourIn" name="hourIn" value = 8>
+        <label>:</label>
+        <input type="number" id="minIn" name="minIn" value = 00>
+        <label for="html">AM</label>
+        <input type="radio" id="am" name="amPM" value="am" checked>
+        <label for="html">  PM</label>
+        <input type="radio" id="pm" name="amPM" value="pm"><br>
+
+        <input type="button" value="Submit" id="submitBtn" onclick="calcHours()">
+      
+
+      <p id="result">Results here</p>
+      <p>You need:</p>
+      <h2 id="needHours"></h2>
+      <p>Should clock out at:</p>
+      <h2 id="clockOutTime"></h2>
+</body>
