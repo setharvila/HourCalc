@@ -1,3 +1,54 @@
+*{
+    font-family: roboto, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background-color: lightgray;
+}
+
+.header{
+    background-color: whitesmoke;
+    padding: 15px;
+    
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 10px auto 10px auto;
+}
+
+.header img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.footer{
+    text-align: center;
+    color: rgb(50, 50, 50);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a{
+    text-align: center;
+    color: rgb(50, 50, 50);
+}
+
+.userInput{
+    padding: 15px;
+    margin: 10px auto 10px auto;
+    border-width: 10px;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 10px;
+    
+    max-width: 800px;
+}
+
 h3{
     font-family: roboto,sans-serif;
     font-weight: 800;
@@ -9,68 +60,65 @@ p{
     font-family: roboto, sans-serif;
     font-weight: 400;
     font-style: normal;
-    line-height:100%;
-
+    line-height:120%;
+    padding: 0 15px 0 15px;
 }
 
 
 
-#form{
-    background-color: whitesmoke;
-}
-#result{
+
+
+.result{
     visibility: hidden;
-    background-color: #4CAF50;
-    color: white;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    background-color: whitesmoke;
+    margin: 10px auto 10px auto;
+    color: black;
+    text-align: center;
+    padding: 15px;
+    
+    border-radius: 10px;
+    max-width: 800px;
     
 }
 
-div#result{
-    
-    padding: 10px 30px 30px 30px;
-}
 
-#results.h3{
-    color: whitesmoke;
-}
 
-*{
-    font-family: roboto, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    
-}
 
 #submitBtn {
-    background-color: #4CAF50; /* Green */
+    background-color: #4e4e4e; /* Dark Grey */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     display: inline-block;
     font-size: 16px;
+    font-weight: bold;
     margin: 10px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: darkslategrey;
+    border-radius: 10px;
+    
 }
 
 #hoursDesired, #hourIn, #minIn, #hoursWorked {
-    background-color: #4CAF50;
+    background-color: #d0d0d0;
     width: 50px;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     
-    border-style: solid;
+    border-style: none;
     border-width: 1px;
     border-color: darkslategrey;
-    font-weight: 600;
-    font-size: 18px;
-    color: white;
+    font-weight: normal;
+    font-size: 16px;
+    color: black;
+    border-radius: 10px;
+}
+
+label{
+    font-weight: bold;
+    width: 1200px;
+    text-align: left;
 }
 
 
@@ -80,4 +128,7 @@ div#result{
     padding: 0;
     margin: 0;
     font-size: 20px;
+    color: rgb(42, 42, 42);
+    padding-bottom: 15px;
+
 }
