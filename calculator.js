@@ -1,45 +1,35 @@
-window.onload = initAll;
-
-function initAll(){
-    console.log("Made it this far!");
-    
-    
-}
-
-
 function calcHours(){
 
-    var hourIn = parseInt(document.getElementById('hourIn').value);
-    var minIn = parseInt(document.getElementById('minIn').value);
-    var amPm;
-    if(document.getElementById('am').checked) {
-        console.log("Time is AM");
+    // Variable Decleration
+    var hourIn = parseInt(document.getElementById('hourIn').value);             // Hour Clocked In
+    var minIn = parseInt(document.getElementById('minIn').value);               // Minute Clocked In
+    var amPm;                                                                   // AM or PM
+    var desiredHours = document.getElementById('hoursDesired').value;           // Hours desired to work in the week
+    var hoursAlreadyWorked = document.getElementById('hoursWorked').value;      // Hours already worked this week
+    var returnString = "";                                                      // Blank return string used for final calculation
+
+    // Sets the amPm variable based on the radio button on the form
+    if(document.getElementById('am').checked) 
+    {
         amPm = "am";
-      }else if(document.getElementById('pm').checked) {
-        console.log("Time is PM");
+    } else if(document.getElementById('pm').checked) 
+    {
         amPm = "pm";
-      }
+    }
 
-    var desiredHours = document.getElementById('hoursDesired').value;
-    var hoursAlreadyWorked = document.getElementById('hoursWorked').value;
+    var totalNeeded = desiredHours - hoursAlreadyWorked;                        // Figures out how many hours you need left in the week
+    var hoursNeeded = Math.floor(totalNeeded);                                  // Converts hours needed from a decimal to an int
+    var minNeeded = (totalNeeded - hoursNeeded) * 60;                           // Converts minutes needed from a decimal to an int. Converts base 10 decimal to base 60 minutes
 
-    var totalNeeded = desiredHours - hoursAlreadyWorked;
-    var returnString = "";
-    //console.log("You need " + totalNeeded + " more hours this week.");
 
-    var hoursNeeded = Math.floor(totalNeeded);
-    var minNeeded = (totalNeeded - hoursNeeded) * 60;
-
+    // Converts the calculations to a string for display on the form
     returnString = ("You need " + Math.trunc(hoursNeeded) + " hours and " + Math.trunc(minNeeded) + " min.<br>");
-    var neededTime =  Math.trunc(hoursNeeded) + " hours and " + Math.trunc(minNeeded) + " min.";
+    var neededTime =  Math.trunc(hoursNeeded) + " hours and " + Math.trunc(minNeeded) + " min.";    // Same string as a string, not HTML formatted
 
-    console.log("HourIn:" + hourIn + "  HourNeeded: " + hoursNeeded );
+    var outHour = hourIn + hoursNeeded;     // Calculates what hour to clock out
+    var outMin = minIn + minNeeded;         // Calculates what minute to clock out
 
-    var outHour = hourIn + hoursNeeded;
-    var outMin = minIn + minNeeded;
-    console.log("outHour = " + outHour);
-    console.log("outMin = " + outMin);
-
+    // Accounts for minutes greater than 59
     if(outMin > 59){
         var remainMin = (outMin - 60);
         console.log("made it hereeeeeee");
@@ -47,28 +37,31 @@ function calcHours(){
         outMin = remainMin;
     }
 
+    // Accounts for hours greater than 12
     if(outHour > 12){
         outHour = outHour % 12;
         
         if(amPm == "am") amPm = "pm";
         else if(amPm == "pm") amPm = "am";
     }
-    console.log("outMin = " + outMin);
-
+    
+    // Makes the hour human friendly
     var txtHour = "" + Math.trunc(outHour);
     txtHour = "" + ('00'+ outHour).slice(-2);
     
+    // Makes the minute human friendly
     var txtMin = "" + Math.trunc(outMin);
     txtMin = "" + ('00'+ txtMin).slice(-2);
 
-    console.log("outMin = " + txtMin);
-
+    
+    // Appends the calculated times to the main return string
     returnString = returnString + ("You should clock out at " + txtHour + ":" + txtMin + amPm + " for " + desiredHours + " hours.");
     var clockOutTime = txtHour + ":" + txtMin + amPm;
 
-    console.log(returnString);
-    //document.getElementById("result").innerHTML = returnString;
-
+    // Returns the information to console. Mainly used for testing
+    // console.log(returnString);
+    
+    // Passes the data back to the HTML page
     document.getElementById("clockOutTime").innerHTML = clockOutTime;
     document.getElementById("needHours").innerHTML = neededTime;
     document.getElementById("result").style.visibility = "visible";
