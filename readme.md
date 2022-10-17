@@ -19,3 +19,9 @@ I worked a summer job where I was permitted to work up to 39.99 hours in a week.
 - While I personally rely on the calcuations, I bare no responsibilty that the calculations will be accurate. The program has not been fully tested or optimized to work in every use case. Use at your own risk.
 - When supplied with a floating point number for the clock in time, the seconds are truncated, not rounded. Be mindful of that when calculating your time.
 
+---
+### Things I learned from the project
+- It had been awhile since I used JS, this was a good excersise to keep those skills polished.
+- Code documentation is important. I was in a rush when creating this project so didn't document it. Came back later to document it and it took a lot longer to figure out what I had wrote, than if i had just documented from the git go.
+- This was my first project to both host on GitHub and use for version control. Learned a lot about how Github works.
+
